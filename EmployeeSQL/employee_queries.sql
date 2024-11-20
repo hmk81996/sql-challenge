@@ -1,3 +1,4 @@
+
 -- List employee number, last, name, first name, sex, and salary of each employee
 -- Create a join between Employees and Salaries
 
@@ -9,7 +10,7 @@ e.emp_no = s.emp_no;
 -- List the first name, last name, and hire date for the employees who were hired in 1986
 -- Use the BETWEEN operator to include all dates in 1986
 
-SElECT e.first_name, e.last_name, e.hire_date
+SELECT e.first_name, e.last_name, e.hire_date
 FROM "Employees" as e
 WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
