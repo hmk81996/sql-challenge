@@ -38,18 +38,23 @@ AND e.last_name LIKE 'B%';
 
 -- List each employee in the Sales department, including their employee number, last name, and first name
 
-SELECT e.last_name, e.first_name
-FROM "Employees" AS e
-JOIN 
-
-SELECT d.dept_name
-FROM "Dept" AS d
-WHERE d.dept_name = "Sales" IN
-
-SELECT dept.emp_no
-FROM "Dept" AS dept
+SELECT d.dept_name, demp.dept_no, demp.emp_no, e.last_name, e.first_name
+FROM "DeptEmp" AS demp 
+JOIN "Employees" AS e ON demp.emp_no = e.emp_no
+JOIN "Dept" AS d ON demp.dept_no = d.dept_no
+WHERE d.dept_no = 'd007';
 
 -- List each emmployee in the Sales and Development departments, including their employee number, last name, first name and department name
 
--- List the frequency counts, in descending order, of all the employee last names (how many employees share each last name)
+SELECT demp.emp_no, e.last_name, e.first_name, d.dept_name, demp.dept_no
+FROM "DeptEmp" AS demp 
+JOIN "Employees" AS e ON demp.emp_no = e.emp_no
+JOIN "Dept" AS d ON demp.dept_no = d.dept_no
+WHERE d.dept_no = 'd005' OR d.dept_no = 'd007';
 
+-- List the frequency counts, in descending order, of all the employee last names (how many employees share each last name)
+-- XPert Learning Assistant provided code for frequency_count
+SELECT e.last_name, COUNT(*) AS frequency_count
+FROM "Employees" AS e
+GROUP BY e.last_name
+ORDER BY frequency_count DESC;
