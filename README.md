@@ -7,7 +7,7 @@ I will be completing a research project about employees of a fictional company h
 ## Data Modeling
 Using the CSV files, I sketched an Entity Relationship Diagram in QuickDBD. Using headers and columns from the CSV files I created physical diagrams of Departments, Department Employees, Department Managers, Employees, Salaries, and Titles. For the Departments, Employees, Titles and Salaries tables, I identified one primary key. However, for Dept_Manager and Dept_Emp, I created a composite key because both values (dept_no and emp_no) were unique and could function as primary keys. The cardinality of each of these relationships was simply a one-to-one relationship because each record had one unique corresponding value. For example, the emp_no could only ever indicate that unique employee across different tables. The same can be said for dept_no and title_id. Determining primary and foreign keys was something of a challenge but a Tutor helped me to make corrections to my ERD sketch. I was initially missing the composite keys.
 
-(![ERD Sketch](EmployeeSQL/image/data_modeling.png))
+(![ERD Sketch](EmployeeSQL/data_modeling.png))
 
 ## Data Engineering
 Using the ERD sketch for references, I created a table schema for each of the six CSV files, specifying data types, primary and foreign keys. When loading the CSV files into its corresponding SQL table, I encountered errors because some Employee numbers were missing. This issue was resolved when I changed the order in which I loaded the CSVs into the tables. This order loaded without errors: Titles, Employees, Departments, Dept_Emp, Dept_Manager, Salaries.
