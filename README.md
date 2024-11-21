@@ -7,7 +7,7 @@ I will be completing a research project about employees of a fictional company h
 ## Data Modeling
 Using the CSV files, I sketched an Entity Relationship Diagram in QuickDBD. Using headers and columns from the CSV files I created physical diagrams of Departments, Department Employees, Department Managers, Employees, Salaries, and Titles.
 
-(![ERD Sketch](EmployeeSQL/image/data_modeling_removed%20FKs.png))
+(![ERD Sketch](EmployeeSQL/Image/data_modeling_removed%20FKs.png))
 
 ## Data Engineering
 Using the ERD sketch for references, I created a table schema for each of the six CSV files, specifying data types, primary and foreign keys. Determining foreign keys was something of a challenge. When loading the CSV files into its corresponding SQL table, I encountered errors because some Employee numbers were missing. This issue was resolved when I removed the foreign key from most Employee numbers in other tables.
