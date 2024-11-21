@@ -48,10 +48,8 @@ ORDER BY d.dept_no, e.last_name;
 -- Alternative method that returns without dept_no
 SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
 FROM "Employees" as e 
-INNER JOIN "Dept_Emp" as de 
-ON (e.emp_no = de.emp_no)
-INNER JOIN "Departments" as d
-ON (de.dept_no=d.dept_no)
+INNER JOIN "Dept_Emp" as de ON (e.emp_no = de.emp_no)
+INNER JOIN "Departments" as d ON (de.dept_no=d.dept_no)
 WHERE d.dept_name = 'Sales'
 ORDER BY e.emp_no;
 
