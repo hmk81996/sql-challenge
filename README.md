@@ -1,4 +1,5 @@
-# sql-challenge
+# employee-database
+SQL Database Engineering - Data Analytics Course Module 9
 
 # Task
 I will be completing a research project about employees of a fictional company hired during the 1980s and 90s. Using six CSV files, I'll design corresponding tables, import those files into a SQL database and perform a series of queries on this new database. This task will require data modeling, data engineering and data analysis.
